@@ -34,7 +34,6 @@ app.get('/api/bookings/restaurantName/:id', (reqProxy, resProxy) => {
 });
 
 app.get('/api/bookings/:id', (reqProxy, resProxy) => {
-  console.log('herlr')
   http.get(`http://localhost:3000/api/bookings/${reqProxy.params.id}`, (res) => {
     cb(res, resProxy);
   });
@@ -47,6 +46,12 @@ app.post('/api/bookings/:id', (reqProxy, resProxy) => {
     .then((response) => {
       resProxy.send(response)
     })
+});
+
+app.get('/api/restaurants/photos/:id', (reqProxy, resProxy) => {
+  http.get(`http://localhost:3003/api/restaurants/photos/${reqProxy.params.id}?restaurant_id=${reqProxy.params.id}`, (res) => {
+    cb(res, resProxy);
+  });
 });
 
 
