@@ -36,10 +36,14 @@ app.get('/api/bookings/restaurantName/:id', (reqProxy, resProxy) => {
 });
 
 app.get('/api/bookings/:id', (reqProxy, resProxy) => {
-  http.get(`http://localhost:3000/api/bookings/${reqProxy.params.id}`, (res) => {
-    cb(res, resProxy);
-  });
+  axios.get(`http://localhost:3000/api/bookings/${reqProxy.params.id}`, {
+    params: reqProxy.query
+  })
+    .then((response) => {
+      resProxy.status(200).send(response.data)
+    });
 });
+
 
 app.post('/api/bookings/:id', (reqProxy, resProxy) => {
   const reservation = reqProxy.body;
