@@ -47,6 +47,7 @@
 
 #popular-dishes-section {
   padding: 5px 0;
+  transform: translateX(15px);
 }
 
 #ReviewModule {
