@@ -8,17 +8,13 @@
   display: flex;
   flex-direction: row-reverse;
   max-width: 992px;
+  margin-left: 250px;
+  margin-right: auto;
 }
 
 .main {
   width: 640px;
-  margin: 0 1rem 0 0;
-}
-
-.container {
-  max-width: inherit;
-  width: inherit;
-  transition: top 100ms ease-out;
+  margin: 0 auto;
 }
 
 #overview {
@@ -27,16 +23,30 @@
   width: 100%;
 }
 
-.block {
-  margin: 0 1rem;
+#sidebar {
+  position: absolute;
+  right: 75px;
+  width: 352px;
+  top: 610px;
+  z-index: -1;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+#bookings {
+  transform: translateY(-200px);
+  position: sticky;
+  top: 10px;
 }
 
 #app {
-  padding: 0 0 4rem;
+  transform: translateX(15px);
 }
 
 #popular-dishes-section {
-  padding: 0 0 4rem;
+  padding: 5px 0;
 }
 
 #ReviewModule {
