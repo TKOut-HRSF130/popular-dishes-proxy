@@ -1,0 +1,44 @@
+.header {
+  position: relative;
+  content: url('./header.jpeg');
+  width: 100%;
+}
+
+#mainContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 992px;
+}
+
+.main {
+  width: 640px;
+  margin: 0 1rem 0 0;
+}
+
+.container {
+  max-width: inherit;
+  width: inherit;
+  transition: top 100ms ease-out;
+}
+
+#overview {
+  padding: 2rem 1rem;
+  content: url('./restrInfo.jpeg');
+  width: 100%;
+}
+
+.block {
+  margin: 0 1rem;
+}
+
+#app {
+  padding: 0 0 4rem;
+}
+
+#popular-dishes-section {
+  padding: 0 0 4rem;
+}
+
+#ReviewModule {
+  padding: 0 0 4rem;
+}
