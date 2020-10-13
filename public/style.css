@@ -35,19 +35,15 @@
   margin: 0 auto;
 }
 
-#bookings {
-  transform: translateY(-200px);
-  position: sticky;
-  top: 10px;
-}
-
 #app {
   transform: translateX(15px);
+  height: 430px;
 }
 
 #popular-dishes-section {
   padding: 5px 0;
   transform: translateX(15px);
+  margin-bottom: 30px;
 }
 
 #ReviewModule {

@@ -21,22 +21,26 @@ const cb = (res, resProxy) => {
   })
 };
 
+app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../public/index.html'))
+});
+
 // ======================================DISHES================================
 app.get('/api/dishes/restaurant/:id', (reqProxy, resProxy) => {
-  http.get(`http://localhost:3001/api/dishes/restaurant/${reqProxy.params.id}`, (res) => {
+  http.get(`http://ec2-54-67-110-162.us-west-1.compute.amazonaws.com/api/dishes/restaurant/${reqProxy.params.id}`, (res) => {
     cb(res, resProxy);
   });
 });
 
 // ==================================BOOKINGS==================================
 app.get('/api/bookings/restaurantName/:id', (reqProxy, resProxy) => {
-  http.get(`http://localhost:3000/api/bookings/restaurantName/${reqProxy.params.id}?restaurantId=${reqProxy.params.id}`, (res) => {
+  http.get(`http://ec2-54-176-143-236.us-west-1.compute.amazonaws.com/api/bookings/restaurantName/${reqProxy.params.id}?restaurantId=${reqProxy.params.id}`, (res) => {
     cb(res, resProxy);
   });
 });
 
 app.get('/api/bookings/:id', (reqProxy, resProxy) => {
-  axios.get(`http://localhost:3000/api/bookings/${reqProxy.params.id}`, {
+  axios.get(`http://ec2-54-176-143-236.us-west-1.compute.amazonaws.com/api/bookings/${reqProxy.params.id}`, {
     params: reqProxy.query
   })
     .then((response) => {
@@ -48,7 +52,7 @@ app.get('/api/bookings/:id', (reqProxy, resProxy) => {
 app.post('/api/bookings/:id', (reqProxy, resProxy) => {
   const reservation = reqProxy.body;
   reservation.restaurantId = reqProxy.params.restaurantId;
-  axios.post(`http://localhost:3000/api/bookings/${reqProxy.params.id}`, reqProxy.body)
+  axios.post(`http://ec2-54-176-143-236.us-west-1.compute.amazonaws.com/api/bookings/${reqProxy.params.id}`, reqProxy.body)
     .then((response) => {
       resProxy.send(response)
     })
@@ -56,20 +60,19 @@ app.post('/api/bookings/:id', (reqProxy, resProxy) => {
 
 // ========================================PHOTOS====================================
 app.get('/api/restaurants/photos/:id', (reqProxy, resProxy) => {
-  http.get(`http://localhost:3003/api/restaurants/photos/${reqProxy.params.id}?restaurant_id=${reqProxy.params.id}`, (res) => {
+  http.get(`http://ec2-34-201-104-34.compute-1.amazonaws.com/api/restaurants/photos/${reqProxy.params.id}?restaurant_id=${reqProxy.params.id}`, (res) => {
     cb(res, resProxy);
   });
 });
-
 // ====================================REVIEWS=======================================
 app.get('/api/restaurants/:id', (reqProxy, resProxy) => {
-  http.get(`http://localhost:3002/api/restaurants/${reqProxy.params.id}`, (res) => {
+  http.get(`http://ec2-13-52-220-189.us-west-1.compute.amazonaws.com/api/restaurants/${reqProxy.params.id}`, (res) => {
     cb(res, resProxy);
   });
 });
 
 app.get('/api/review_list/:id', (reqProxy, resProxy) => {
-  http.get(`http://localhost:3002/api/review_list/${reqProxy.params.id}`, (res) => {
+  http.get(`http://ec2-13-52-220-189.us-west-1.compute.amazonaws.com/api/review_list/${reqProxy.params.id}`, (res) => {
     cb(res, resProxy);
   });
 });
