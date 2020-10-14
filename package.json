@@ -1,15 +1,26 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
-  "engines": {
-    "node": ">=6.13.0"
-  },
+  "name": "proxy",
+  "version": "1.0.0",
+  "description": "Proxy server",
+  "author": "Anna Kazannik",
+  "license": "ISC",
+  "main": "index.js",
   "scripts": {
+    "start": "nodemon server/server.js",
+    "react-dev": "webpack -d --watch"
   },
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
