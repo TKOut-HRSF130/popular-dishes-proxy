@@ -28,5 +28,5 @@ npm install
 ```
 npm start
 ```
-Make sure the containers with the microservices are running on their respective EC2 instances
+Make sure the containers with the microservices are running on their respective EC2 instances.
 Open `http://localhost:3004`
