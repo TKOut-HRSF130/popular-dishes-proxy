@@ -1,38 +1,32 @@
 # Project Name
-TKOut, popular-dishes proxy server
-
-Proxy server for popular dishes service
+TKOut proxy server
 
 ## Related Projects
 
-  - https://github.com/TKOut-HRSF130/photos-carousel-service
-  - https://github.com/TKOut-HRSF130/bookings-service
-  - https://github.com/TKOut-HRSF130/reviews-service
+  - Photogallery: https://github.com/TKOut-HRSF130/photos-carousel-service
+  - Calendar: https://github.com/TKOut-HRSF130/bookings-service
+  - Reviews: https://github.com/TKOut-HRSF130/reviews-service
 
 ## Table of Contents
 
-1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
+2. [Installing-Dependencies](#Installing-Dependencies)
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+- Node 12.x
 
-- Node 6.13.0
-- etc
+## Installing-Dependencies
 
-## Development
+From within the root directory run the following in the terminal:
 
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
+>*Install dependencies*
+```
 npm install
 ```
+>*Start the server*
+```
+npm start
+```
+Make sure the containers with the microservices are running on their respective EC2 instances
+Open `http://localhost:3004`
